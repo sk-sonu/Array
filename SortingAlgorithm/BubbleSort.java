@@ -1,4 +1,24 @@
 class BubbleSort{
+    public static void optimizedSorting(int[] arr){
+         int n = arr.length;
+        int temp;
+        int flag;
+        for(int i = 0; i<n-1; i++){
+            flag = 0;
+            for(int j = 0; j<n-1; j++)
+            {
+                if(arr[j]>arr[j+1]){
+                        temp = arr[j];
+                        arr[j] = arr[j+1];
+                        arr[j+1] = temp;
+                        flag = 1;
+                }
+            }
+            if(flag == 0){
+                break;
+            }
+        }
+    }
     public static void sorting(int[] arr){
         int n = arr.length;
         int temp;
@@ -26,6 +46,9 @@ class BubbleSort{
         displayArray(arr);
         sorting(arr);
         System.out.println("Array after sorting...");
+        displayArray(arr);
+        System.out.println();
+        optimizedSorting(arr);
         displayArray(arr);
     }
 }
